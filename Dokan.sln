@@ -1,39 +1,40 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.30114.105
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32811.315
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{EBCD3490-DFD8-4531-AF4D-89A41AA1F13D}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "APIGateway", "APIGateway", "{CB6AE142-CFE9-49AF-AA7A-3715D30CCA40}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dokan.ApiGateway", "src\APIGateway\Dokan.ApiGateway\Dokan.ApiGateway.csproj", "{616C1875-1E9E-403B-8182-49692E3CE8D5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dokan.ApiGateway", "src\APIGateway\Dokan.ApiGateway\Dokan.ApiGateway.csproj", "{616C1875-1E9E-403B-8182-49692E3CE8D5}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{1B90147F-E461-43AC-BB7D-6E3072EC2D69}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Order", "Order", "{3EE11FE1-FDB3-4715-8585-376833610452}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dokan.Service.Ordering", "src\Services\Order\Dokan.Service.Ordering\Dokan.Service.Ordering.csproj", "{CE153F1C-F045-4163-A9C7-CFE0BDA64A46}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dokan.Service.Ordering", "src\Services\Order\Dokan.Service.Ordering\Dokan.Service.Ordering.csproj", "{CE153F1C-F045-4163-A9C7-CFE0BDA64A46}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Ticket", "Ticket", "{4B95FBF6-48AD-46CF-ADB7-19FAF03B16A5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dokan.Service.Ticketing", "src\Services\Ticket\Dokan.Service.Ticketing\Dokan.Service.Ticketing.csproj", "{32B16775-D52D-42F8-82BD-5A1A16D6A3B4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dokan.Service.Ticketing", "src\Services\Ticket\Dokan.Service.Ticketing\Dokan.Service.Ticketing.csproj", "{32B16775-D52D-42F8-82BD-5A1A16D6A3B4}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{8DCC52BC-1B96-4656-9A90-332FE3BE129A}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{7D286878-5C53-49BB-9EA4-D963D31F4092}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dokan.Order.Tests", "test\Services\Dokan.Order.Tests\Dokan.Order.Tests.csproj", "{8BC2BC0E-A0E6-4AEC-8374-08C5D0E3B4D9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dokan.Order.Tests", "test\Services\Dokan.Order.Tests\Dokan.Order.Tests.csproj", "{8BC2BC0E-A0E6-4AEC-8374-08C5D0E3B4D9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dokan.Ticket.Tests", "test\Services\Dokan.Ticket.Tests\Dokan.Ticket.Tests.csproj", "{D3D05993-9210-4C8A-B96B-EF5F86627100}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dokan.Ticket.Tests", "test\Services\Dokan.Ticket.Tests\Dokan.Ticket.Tests.csproj", "{D3D05993-9210-4C8A-B96B-EF5F86627100}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{D58920B9-612B-460A-A779-94677A860CD4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shared.Models", "Shared.Models\Shared.Models.csproj", "{744DBF04-0282-437B-AA2F-940F1A528E4E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{616C1875-1E9E-403B-8182-49692E3CE8D5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -56,6 +57,13 @@ Global
 		{D3D05993-9210-4C8A-B96B-EF5F86627100}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D3D05993-9210-4C8A-B96B-EF5F86627100}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D3D05993-9210-4C8A-B96B-EF5F86627100}.Release|Any CPU.Build.0 = Release|Any CPU
+		{744DBF04-0282-437B-AA2F-940F1A528E4E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{744DBF04-0282-437B-AA2F-940F1A528E4E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{744DBF04-0282-437B-AA2F-940F1A528E4E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{744DBF04-0282-437B-AA2F-940F1A528E4E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{CB6AE142-CFE9-49AF-AA7A-3715D30CCA40} = {EBCD3490-DFD8-4531-AF4D-89A41AA1F13D}
@@ -68,5 +76,10 @@ Global
 		{7D286878-5C53-49BB-9EA4-D963D31F4092} = {8DCC52BC-1B96-4656-9A90-332FE3BE129A}
 		{8BC2BC0E-A0E6-4AEC-8374-08C5D0E3B4D9} = {7D286878-5C53-49BB-9EA4-D963D31F4092}
 		{D3D05993-9210-4C8A-B96B-EF5F86627100} = {7D286878-5C53-49BB-9EA4-D963D31F4092}
+		{D58920B9-612B-460A-A779-94677A860CD4} = {EBCD3490-DFD8-4531-AF4D-89A41AA1F13D}
+		{744DBF04-0282-437B-AA2F-940F1A528E4E} = {D58920B9-612B-460A-A779-94677A860CD4}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5520301A-84D3-420F-BD0C-F39A93F65D67}
 	EndGlobalSection
 EndGlobal
