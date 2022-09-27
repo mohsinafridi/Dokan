@@ -1,0 +1,53 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30114.105
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{EBCD3490-DFD8-4531-AF4D-89A41AA1F13D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "APIGateway", "APIGateway", "{CB6AE142-CFE9-49AF-AA7A-3715D30CCA40}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dokan.ApiGateway", "src\APIGateway\Dokan.ApiGateway\Dokan.ApiGateway.csproj", "{616C1875-1E9E-403B-8182-49692E3CE8D5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{1B90147F-E461-43AC-BB7D-6E3072EC2D69}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Order", "Order", "{3EE11FE1-FDB3-4715-8585-376833610452}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dokan.Service.Ordering", "src\Services\Order\Dokan.Service.Ordering\Dokan.Service.Ordering.csproj", "{CE153F1C-F045-4163-A9C7-CFE0BDA64A46}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Ticket", "Ticket", "{4B95FBF6-48AD-46CF-ADB7-19FAF03B16A5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dokan.Service.Ticketing", "src\Services\Ticket\Dokan.Service.Ticketing\Dokan.Service.Ticketing.csproj", "{32B16775-D52D-42F8-82BD-5A1A16D6A3B4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{616C1875-1E9E-403B-8182-49692E3CE8D5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{616C1875-1E9E-403B-8182-49692E3CE8D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{616C1875-1E9E-403B-8182-49692E3CE8D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{616C1875-1E9E-403B-8182-49692E3CE8D5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CE153F1C-F045-4163-A9C7-CFE0BDA64A46}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CE153F1C-F045-4163-A9C7-CFE0BDA64A46}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CE153F1C-F045-4163-A9C7-CFE0BDA64A46}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CE153F1C-F045-4163-A9C7-CFE0BDA64A46}.Release|Any CPU.Build.0 = Release|Any CPU
+		{32B16775-D52D-42F8-82BD-5A1A16D6A3B4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{32B16775-D52D-42F8-82BD-5A1A16D6A3B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{32B16775-D52D-42F8-82BD-5A1A16D6A3B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{32B16775-D52D-42F8-82BD-5A1A16D6A3B4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{CB6AE142-CFE9-49AF-AA7A-3715D30CCA40} = {EBCD3490-DFD8-4531-AF4D-89A41AA1F13D}
+		{616C1875-1E9E-403B-8182-49692E3CE8D5} = {CB6AE142-CFE9-49AF-AA7A-3715D30CCA40}
+		{1B90147F-E461-43AC-BB7D-6E3072EC2D69} = {EBCD3490-DFD8-4531-AF4D-89A41AA1F13D}
+		{3EE11FE1-FDB3-4715-8585-376833610452} = {1B90147F-E461-43AC-BB7D-6E3072EC2D69}
+		{CE153F1C-F045-4163-A9C7-CFE0BDA64A46} = {3EE11FE1-FDB3-4715-8585-376833610452}
+		{4B95FBF6-48AD-46CF-ADB7-19FAF03B16A5} = {1B90147F-E461-43AC-BB7D-6E3072EC2D69}
+		{32B16775-D52D-42F8-82BD-5A1A16D6A3B4} = {4B95FBF6-48AD-46CF-ADB7-19FAF03B16A5}
+	EndGlobalSection
+EndGlobal
