@@ -9,23 +9,30 @@ namespace Dokan.Service.Ticketing.Controllers
     [ApiController]
     public class TicketController : ControllerBase
     {
-        private readonly IBus _bus;
-        public TicketController(IBus bus)
+    //    private readonly IBus _bus;
+        public TicketController()
         {
-            _bus = bus;
+           
         }
-        [HttpPost]
-        public async Task<IActionResult> CreateTicket(Ticket ticket)
+
+        [HttpGet]
+        public IActionResult Get()
         {
-            if (ticket != null)
-            {
-                ticket.BookedOn = DateTime.Now;
-                Uri uri = new Uri("rabbitmq://localhost/ticketQueue");
-                var endPoint = await _bus.GetSendEndpoint(uri);
-                await endPoint.Send(ticket);
-                return Ok();
-            }
-            return BadRequest();
+            return Ok("OK");
         }
+
+        //[HttpPost]
+        //public async Task<IActionResult> CreateTicket(Ticket ticket)
+        //{
+        //    if (ticket != null)
+        //    {
+        //        ticket.BookedOn = DateTime.Now;
+        //        Uri uri = new Uri("rabbitmq://localhost/ticketQueue");
+        //        var endPoint = await _bus.GetSendEndpoint(uri);
+        //        await endPoint.Send(ticket);
+        //        return Ok();
+        //    }
+        //    return BadRequest();
+        //}
     }
 }

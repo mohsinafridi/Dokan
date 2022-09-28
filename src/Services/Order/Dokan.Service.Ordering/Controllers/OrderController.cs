@@ -2,6 +2,7 @@
 using MassTransit;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Shared.Models.Models;
 
 namespace Dokan.Service.Ordering.Controllers
 {
@@ -14,6 +15,12 @@ namespace Dokan.Service.Ordering.Controllers
         {
             _publishEndpoint = publishEndpoint;
         }
+        [HttpGet]
+        public IActionResult Get()
+        {
+            return Ok("OK");
+        }
+
 
         [HttpPost]
         public async Task<IActionResult> CreateOrder(OrderDto orderDto)
