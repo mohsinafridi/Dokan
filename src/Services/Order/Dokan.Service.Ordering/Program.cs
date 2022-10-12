@@ -1,6 +1,6 @@
 using Dokan.Service.Ordering.Consumers;
 using MassTransit;
-
+using JWTManager;
 var builder = WebApplication.CreateBuilder(args);
 
 
@@ -35,7 +35,7 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-
+builder.Services.AddCustomJwtAuthentication();
 
 // builder.Services.AddMassTransitHostedService(); // ignore for newer version.
 
@@ -50,6 +50,7 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();

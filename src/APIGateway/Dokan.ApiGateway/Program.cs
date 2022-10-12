@@ -1,5 +1,6 @@
 using Ocelot.DependencyInjection;
 using Ocelot.Middleware;
+using JWTManager;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,6 +12,8 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddOcelot();
 
+// 1. JWT Extension method
+builder.Services.AddCustomJwtAuthentication();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -24,6 +27,7 @@ app.UseOcelot();
 
 app.UseHttpsRedirection();
 
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();

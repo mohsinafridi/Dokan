@@ -1,4 +1,5 @@
 ﻿using MassTransit;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Shared.Models.Models;
 
@@ -13,14 +14,14 @@ namespace Dokan.Service.Ticketing.Controllers
         {
             _bus = bus;
         }
-
+        
         [HttpGet]
         public IActionResult Get()
         {
             return Ok("OK");
         }
 
-        [HttpPost]
+        [HttpPost]       
         public async Task<IActionResult> CreateTicket(Ticket ticket)
         {
             if (ticket != null)

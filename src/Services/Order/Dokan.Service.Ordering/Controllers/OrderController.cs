@@ -1,5 +1,6 @@
 ﻿using Dokan.Service.Ordering.DTOs;
 using MassTransit;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Shared.Models.Models;
@@ -16,6 +17,7 @@ namespace Dokan.Service.Ordering.Controllers
             _publishEndpoint = publishEndpoint;
         }
         [HttpGet]
+        [Authorize]
         public IActionResult Get()
         {
             return Ok("OK");
