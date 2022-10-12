@@ -5,4 +5,5 @@
                Ocelot                     
                Rabbit MQ
                Authentication & Authorization through JWT
+               adding more ...
 
