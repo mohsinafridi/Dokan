@@ -13,11 +13,6 @@
          add Graph QL for data fetching.
 
 
-         Mongo Db:
-         mongodb+srv://mohsinafridi91:Prompt7788@cluster0.pzkfmfd.mongodb.net/?retryWrites=true&w=majority
-
-         Yahooafridi@7788
-
-         mongodb+srv://mohsinafridi91:Yahooafridi@7788@cluster0.pzkfmfd.mongodb.net/?retryWrites=true&w=majority
+         
 
 
