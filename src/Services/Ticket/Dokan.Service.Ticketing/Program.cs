@@ -18,6 +18,15 @@ builder.Services.AddMassTransit(x =>
       );
 
 
+
+/*
+ builder.Services.AddDbContext<DataContext>( options =>
+{
+  options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnectiion"));
+});
+ */
+
+
 //builder.Services.AddMassTransitHostedService();
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();

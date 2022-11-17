@@ -33,9 +33,18 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shared.Models", "Shared.Mod
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CrossCutting", "CrossCutting", "{5333E3E5-0ACF-48C0-B1A1-BA3CEE44F896}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JWTManager", "JWTManager\JWTManager.csproj", "{738F08FF-FF61-476D-8DE9-3A91C5982153}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JWTManager", "JWTManager\JWTManager.csproj", "{738F08FF-FF61-476D-8DE9-3A91C5982153}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Authentication.WebAPI", "Authentication.WebAPI\Authentication.WebAPI.csproj", "{00DB8B87-D708-415F-9754-CFAEDC09854B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Authentication.WebAPI", "Authentication.WebAPI\Authentication.WebAPI.csproj", "{00DB8B87-D708-415F-9754-CFAEDC09854B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{771495A4-76B4-4936-A08C-924327D0B84B}"
+	ProjectSection(SolutionItems) = preProject
+		TODO.txt = TODO.txt
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Book", "Book", "{E13165FA-63CF-4E40-AE3A-5AD8FC1EE6A5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dokan.Service.Book", "src\Services\Book\Dokan.Service.Book\Dokan.Service.Book.csproj", "{955C1681-A21B-4029-8FBF-34131A88E091}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -75,6 +84,10 @@ Global
 		{00DB8B87-D708-415F-9754-CFAEDC09854B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{00DB8B87-D708-415F-9754-CFAEDC09854B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{00DB8B87-D708-415F-9754-CFAEDC09854B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{955C1681-A21B-4029-8FBF-34131A88E091}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{955C1681-A21B-4029-8FBF-34131A88E091}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{955C1681-A21B-4029-8FBF-34131A88E091}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{955C1681-A21B-4029-8FBF-34131A88E091}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -94,6 +107,8 @@ Global
 		{744DBF04-0282-437B-AA2F-940F1A528E4E} = {D58920B9-612B-460A-A779-94677A860CD4}
 		{5333E3E5-0ACF-48C0-B1A1-BA3CEE44F896} = {EBCD3490-DFD8-4531-AF4D-89A41AA1F13D}
 		{738F08FF-FF61-476D-8DE9-3A91C5982153} = {5333E3E5-0ACF-48C0-B1A1-BA3CEE44F896}
+		{E13165FA-63CF-4E40-AE3A-5AD8FC1EE6A5} = {1B90147F-E461-43AC-BB7D-6E3072EC2D69}
+		{955C1681-A21B-4029-8FBF-34131A88E091} = {E13165FA-63CF-4E40-AE3A-5AD8FC1EE6A5}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5520301A-84D3-420F-BD0C-F39A93F65D67}
