@@ -16,8 +16,7 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddTransient<IBookService, BookService>();
 var myAppSettings = builder.Configuration.Get<DatabaseSettings>();
 
-builder.Services.Configure<DatabaseSettings>(builder.Configuration.GetSection("MyKey"));
-// builder.Services.Configure<DatabaseSettings>(Configuration.GetSection(nameof(DatabaseSettings)));
+// builder.Services.Configure<DatabaseSettings>(builder.Configuration.GetSection("MyKey"));
 
 builder.Services.Configure<DatabaseSettings>(builder.Configuration.GetSection(nameof(DatabaseSettings)));
 builder.Services.AddSingleton<IDatabaseSettings>(x => x.GetRequiredService<IOptions<DatabaseSettings>>().Value);
@@ -38,7 +37,7 @@ if (app.Environment.IsDevelopment())
 
 
 app.UseAuthentication();
-app.UseAuthorization();
+//app.UseAuthorization();
 
 app.MapControllers();
 

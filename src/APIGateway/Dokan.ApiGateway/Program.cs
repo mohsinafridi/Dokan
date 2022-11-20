@@ -8,6 +8,17 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
 
+
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("CorsPolicy",
+    builder => builder.WithOrigins("http://localhost:4200")
+    .AllowAnyMethod()
+    .AllowAnyHeader()
+    .AllowCredentials());
+});
+
+
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddOcelot();
@@ -15,7 +26,7 @@ builder.Services.AddOcelot();
 // 1. JWT Extension method
 builder.Services.AddCustomJwtAuthentication();
 var app = builder.Build();
-
+app.UseCors("CorsPolicy");
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {

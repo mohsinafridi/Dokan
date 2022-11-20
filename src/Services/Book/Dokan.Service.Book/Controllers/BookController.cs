@@ -42,9 +42,9 @@ namespace Dokan.Service.Book.Controllers
         }
 
         [HttpDelete]
-        public IActionResult DeleteBook(string bookId)
+        public IActionResult DeleteBook([FromQuery]string id)
         {
-            _bookService.Delete(bookId);
+            _bookService.Delete(id);
             return Ok();
         }
     }

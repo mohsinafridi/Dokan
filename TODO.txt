@@ -3,16 +3,26 @@
 -- Done
          Ocelot is added.
          RabbitMq and Mass Transit is also added.
-         puhsed to Github.
-
+         pushed to Github.
+         Mongo Db added for Book service.
 
  -- New addition
-         Add Mongo Db and Sql server for 
+         and Sql server for 
          different micro services.
 
          add Graph QL for data fetching.
 
+         -- add swagger on gateway side for all apis.
+         -- sql server support.
 
          
 
 
+
+         Microservices:
+         1.
+         2.
+         3.
+         4. https://localhost:5000/Book - Mongo Db
+         5. https://localhost:5000/Customer - Sql Server Db
+         6.Product
