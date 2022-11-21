@@ -1,11 +1,8 @@
 ﻿using Dokan.Service.Ordering.DTOs;
 using Dokan.Service.Ordering.Models;
 using MassTransit;
-using MassTransit.Transports;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using MongoDB.Driver;
-using Shared.Models.Models;
 
 namespace Dokan.Service.Ordering.Controllers
 {

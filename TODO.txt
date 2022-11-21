@@ -26,3 +26,14 @@
          4. https://localhost:5000/Book - Mongo Db
          5. https://localhost:5000/Customer - Sql Server Db
          6.Product
+
+
+         Rabbit MQ:
+          if (ticket != null)
+            {
+                ticket.BookedOn = DateTime.Now;
+                Uri uri = new Uri("rabbitmq://localhost/ticketQueue");
+                var endPoint = await _bus.GetSendEndpoint(uri);
+                await endPoint.Send(ticket);
+                return Ok();
+            }

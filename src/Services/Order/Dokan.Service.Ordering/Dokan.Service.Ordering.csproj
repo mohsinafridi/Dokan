@@ -16,7 +16,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\..\..\JWTManager\JWTManager.csproj" />
-    <ProjectReference Include="..\..\..\..\Shared.Models\Shared.Models.csproj" />
   </ItemGroup>
 
 </Project>
