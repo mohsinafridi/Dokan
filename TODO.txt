@@ -20,12 +20,13 @@
 
 
          Microservices:
-         1.
+         1. https://localhost:5001/Order - Order
          2.
-         3.
-         4. https://localhost:5000/Book - Mongo Db
-         5. https://localhost:5000/Customer - Sql Server Db
-         6.Product
+         3. https://localhost:5001/Account - Order
+         4. https://localhost:5004/Book - Mongo Db
+         5. https://localhost:5005/Customer - Sql Server Db
+         6.  https://localhost:5006/Product - MySql Db
+         7. https://localhost:5000/Note  Notes - PostgreSQL
 
 
          Rabbit MQ:
