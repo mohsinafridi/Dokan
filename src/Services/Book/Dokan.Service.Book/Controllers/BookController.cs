@@ -1,5 +1,8 @@
 using Dokan.Service.Book.Interfaces;
+using Dokan.Service.Book.Models;
 using Microsoft.AspNetCore.Mvc;
+using Swashbuckle.AspNetCore.Annotations;
+using System.Net;
 
 namespace Dokan.Service.Book.Controllers
 {
@@ -16,36 +19,59 @@ namespace Dokan.Service.Book.Controllers
 
 
         [HttpGet]
-        public IActionResult Get()
+        [SwaggerResponse((int)HttpStatusCode.NoContent, "No Books Found.")]
+        public async Task<IActionResult> Get()
         {
-            return Ok(_bookService.GetBooks());
+            var books = await _bookService.GetBooks();
+            if (books.Count == 0)
+            {
+                return NoContent();
+            }
+            return Ok(await _bookService.GetBooks());
         }
 
         [HttpGet("{id}")]
-        public IActionResult Get(string id)
+        public async Task<IActionResult> Get(string id)
         {
-            return Ok(_bookService.Find(id));
+            var book = await _bookService.GetBookById(id);
+            if (book.Id != id)
+            {
+                return NotFound();
+            }
+            return Ok(book);           
         }
 
         [HttpPost]
-        public IActionResult AddBook([FromBody] Models.Book book)
+        public async Task<IActionResult> AddBook([FromBody] Models.Book book)
         {
-            _bookService.AddBook(book);
-            return Ok(book);
+            var transactionResult = await _bookService.AddBook(book);
+            switch (transactionResult)
+            {
+                case TransactionResult.Success:
+                    return Ok();
+                case TransactionResult.BadRequest:
+                    return StatusCode(StatusCodes.Status400BadRequest);
+                default:
+                    return StatusCode(StatusCodes.Status500InternalServerError);
+            }
         }
 
         [HttpPut]
-        public IActionResult UpdateBook(Models.Book book)
+        public async Task<IActionResult> UpdateBook(Models.Book book)
         {
-            _bookService.Update(book);
+            await _bookService.UpdateBook(book);
             return Ok(book);
         }
 
         [HttpDelete]
-        public IActionResult DeleteBook([FromQuery]string id)
+        [SwaggerResponse((int)HttpStatusCode.OK, "Book Deleted.")]
+        public async Task<IActionResult> DeleteBook([FromQuery]string id)
         {
-            _bookService.Delete(id);
+            var result = await _bookService.DeleteBook(id);
+             if(result)
             return Ok();
+
+            return StatusCode(StatusCodes.Status404NotFound);
         }
     }
 }
