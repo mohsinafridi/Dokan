@@ -1,0 +1,44 @@
+{
+  "Routes": [
+    {
+      "UpstreamPathTemplate": "/Product",
+      "UpstreamHttpMethod": [ "GET", "Post", "Put" ],
+      "DownstreamPathTemplate": "/api/Product",
+      "DownstreamScheme": "http",
+      "SwaggerKey": "product",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5006
+        }
+      ]
+      //"AuthenticationOptions": {
+      //  "AuthenticationProviderKey": "Bearer",
+      //  "AllowedScopes": []
+      //},
+      //"RouteClaimsRequirement": {
+      //  "Role": "Admin"
+      //},
+      //"RateLimitOptions": {
+      //  "ClientWhitelist": [],
+      //  "EnableRateLimiting": true,
+      //  "Period": "30s",
+      //  "PeriodTimespan": 30,
+      //  "Limit": 1
+      //}
+    },
+    {
+      "UpstreamPathTemplate": "/Product/{id}",
+      "UpstreamHttpMethod": [ "Get", "Delete" ],
+      "DownstreamPathTemplate": "/api/Product/{id}",
+      "DownstreamScheme": "http",
+      "SwaggerKey": "product",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5006
+        }
+      ]
+    }
+  ]
+}
