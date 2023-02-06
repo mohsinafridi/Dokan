@@ -1,19 +1,6 @@
 {
   "Routes": [
     {
-      "UpstreamPathTemplate": "/Book",
-      "UpstreamHttpMethod": [ "Get" ],
-      "DownstreamPathTemplate": "/api/Book",
-      "DownstreamScheme": "http",
-      "SwaggerKey": "book",
-      "DownstreamHostAndPorts": [
-        {
-          "Host": "localhost",
-          "Port": 5004
-        }
-      ]
-    },
-    {
       "UpstreamPathTemplate": "/Book/{id}",
       "UpstreamHttpMethod": [ "Get", "Delete" ],
       "DownstreamPathTemplate": "/api/Book/{id}",
@@ -25,6 +12,26 @@
           "Port": 5004
         }
       ]
+    },
+    {
+      "UpstreamPathTemplate": "/Book",
+      "UpstreamHttpMethod": [ "Get", "Post", "Put" ],
+      "DownstreamPathTemplate": "/api/Book",
+      "DownstreamScheme": "http",
+      "SwaggerKey": "book",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5004
+        }
+      ]
+      //,"AuthenticationOptions": {
+      //  "AuthenticationProviderKey": "Bearer",
+      //  "AllowedScopes": []
+      //},
+      //"RouteClaimsRequirement": {
+      //  "Role": "Admin"
+      //}
     }
   ]
 }

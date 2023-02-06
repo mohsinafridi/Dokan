@@ -15,9 +15,8 @@ builder.Configuration.AddOcelotWithSwaggerSupport(options =>
 // Add services to the container.
 
 builder.Services.AddControllers();
-ConfigurationManager configuration = builder.Configuration;
 
-// Add Swagger for ocelot
+// Add CORS for ocelot
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("CorsPolicy",
@@ -27,11 +26,13 @@ builder.Services.AddCors(options =>
     .AllowCredentials());
 });
 
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddOcelot(builder.Configuration).AddPolly();
 builder.Services.AddSwaggerForOcelot(builder.Configuration);
+
+
 var environment = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT");
 builder.Configuration.SetBasePath(Directory.GetCurrentDirectory())
     .AddOcelot(routes, builder.Environment)

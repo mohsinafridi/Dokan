@@ -2,7 +2,6 @@ using Dokan.Service.Customer.Interfaces;
 using Dokan.Service.Customer.Models;
 using Dokan.Service.Customer.Services;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Options;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -12,18 +11,15 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 //DI
 
-builder.Services.Configure<DatabaseSettings>(builder.Configuration.GetSection(nameof(DatabaseSettings)));
-builder.Services.AddSingleton<IDatabaseSettings>(x => x.GetRequiredService<IOptions<DatabaseSettings>>().Value);
+// builder.Services.Configure<DatabaseSettings>(builder.Configuration.GetSection(nameof(DatabaseSettings)));
+builder.Services.Configure<DatabaseSettings>(builder.Configuration.GetSection("DatabaseSettings"));
 
-var DbHost = Environment.GetEnvironmentVariable("DB_HOST");
-var DbName = Environment.GetEnvironmentVariable("DB_NAME");
 
-//var connectionString = $"Data Source=MOHSIN\\SQLEXPRESS;Initial Catalog=CustomerDb;Integrated Security=True;"; // WITHOUT DOCKER COMPOSE
-//var connectionString = $"Data Source={DbHost}; Initial Catalog={DbName}";
-//builder.Services.AddDbContext<CustomerDbContext>(opt => opt.UseSqlServer(Configuration.GetConnectionString("CustomerDbCS")));
+//builder.Services.AddSingleton<IDatabaseSettings>(x => x.GetRequiredService<IOptions<DatabaseSettings>>().Value);
 
-var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
-builder.Services.AddDbContext<CustomerDbContext>(options => options.UseSqlServer(connectionString));
+
+var cs = builder.Configuration.GetConnectionString("DefaultConnection");
+//builder.Services.AddDbContext<CustomerDbContext>(options => options.UseSqlServer(cs));
 
 var app = builder.Build();
 

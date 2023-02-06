@@ -1,35 +1,8 @@
 {
-  "Routes": [
-    {
-      "UpstreamPathTemplate": "/Customer",
-      "UpstreamHttpMethod": [ "GET" ],
-      "DownstreamPathTemplate": "/api/Customer",
-      "DownstreamScheme": "http",
-      "SwaggerKey": "customer",
-      "DownstreamHostAndPorts": [
-        {
-          "Host": "localhost",
-          "Port": 5005
-        }
-      ]
-      //"AuthenticationOptions": {
-      //  "AuthenticationProviderKey": "Bearer",
-      //  "AllowedScopes": []
-      //},
-      //"RouteClaimsRequirement": {
-      //  "Role": "Admin"
-      //},
-      //"RateLimitOptions": {
-      //  "ClientWhitelist": [],
-      //  "EnableRateLimiting": true,
-      //  "Period": "30s",
-      //  "PeriodTimespan": 30,
-      //  "Limit": 1
-      //}
-    },
+  "Routes": [   
     {
       "UpstreamPathTemplate": "/Customer/{id}",
-      "UpstreamHttpMethod": [ "Get", "Delete" ],
+      "UpstreamHttpMethod": [  "Get", "Delete" ],
       "DownstreamPathTemplate": "/api/Customer/{id}",
       "DownstreamScheme": "http",
       "SwaggerKey": "customer",
@@ -42,7 +15,7 @@
     },
     {
       "UpstreamPathTemplate": "/Customer",
-      "UpstreamHttpMethod": [ "Post", "Put" ],
+      "UpstreamHttpMethod": [ "GET", "Post", "Put" ],
       "DownstreamPathTemplate": "/api/Customer",
       "DownstreamScheme": "http",
       "SwaggerKey": "customer",

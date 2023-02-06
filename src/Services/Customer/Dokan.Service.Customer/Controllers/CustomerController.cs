@@ -1,5 +1,6 @@
 ﻿using Dokan.Service.Customer.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace Dokan.Service.Customer.Controllers
 {
@@ -17,16 +18,23 @@ namespace Dokan.Service.Customer.Controllers
 
 
         [HttpGet]
-        public ActionResult<IEnumerable<Models.Customer>> Get()
+        public async Task<ActionResult<IEnumerable<Models.Customer>>> Get()
         {
-            return _context.Customers;
+            var customers = await _context.Customers.ToListAsync();
+            if (customers.Count == 0)
+                return NotFound();
+
+            return Ok(customers);
         }
    
         [HttpGet("{Id}")]
         public async Task<ActionResult<Models.Customer>> Get(int Id)
         {
             var customer = await _context.Customers.FindAsync(Id);
-            return customer;
+            if (customer?.CustomerId != Id)
+                return NotFound();
+
+            return Ok(customer);
         }
 
         [HttpPost]
@@ -38,7 +46,7 @@ namespace Dokan.Service.Customer.Controllers
         }
 
         [HttpPut]
-        public async Task<ActionResult> UpdateCustomer(Service.Customer.Models.Customer customer)
+        public async Task<ActionResult> UpdateCustomer(Models.Customer customer)
         {
             _context.Customers.Update(customer);
             await _context.SaveChangesAsync();
