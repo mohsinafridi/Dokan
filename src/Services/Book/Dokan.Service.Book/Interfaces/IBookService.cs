@@ -4,11 +4,11 @@ namespace Dokan.Service.Book.Interfaces
 {
     public interface IBookService
     {
-        Models.Book AddBook(Models.Book book);
-        IList<Models.Book> GetBooks();
-        Models.Book Find(string Id);
-        void Update(Models.Book book);
-        void Delete(string id);
+        Task<TransactionResult> AddBook(Models.Book book);
+        Task<IList<Models.Book>> GetBooks();
+        Task<Models.Book> GetBookById(string Id);
+        Task<TransactionResult> UpdateBook(Models.Book book);
+        Task<bool> DeleteBook(string id);
 
     }
 }

@@ -48,6 +48,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Product", "Product", "{A511
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dokan.Service.Product", "src\Services\Product\Dokan.Service.Product\Dokan.Service.Product.csproj", "{F8F3AAE6-A278-4936-94A4-6238D7689C94}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Notes", "Notes", "{052EBDCE-8487-4FB4-BD4E-20962F8F5AEC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dokan.Service.Notes", "src\Services\Notes\Dokan.Service.Notes\Dokan.Service.Notes.csproj", "{CAFA557D-A893-4E30-AED1-816A7A32FBC4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -94,6 +98,10 @@ Global
 		{F8F3AAE6-A278-4936-94A4-6238D7689C94}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F8F3AAE6-A278-4936-94A4-6238D7689C94}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F8F3AAE6-A278-4936-94A4-6238D7689C94}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CAFA557D-A893-4E30-AED1-816A7A32FBC4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CAFA557D-A893-4E30-AED1-816A7A32FBC4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CAFA557D-A893-4E30-AED1-816A7A32FBC4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CAFA557D-A893-4E30-AED1-816A7A32FBC4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -115,6 +123,8 @@ Global
 		{0296CA9D-6E9D-4D79-8057-88C8C9121DA0} = {4BBAD164-8D85-40FB-9AC2-A67117C54E4E}
 		{A511F0DC-A9C6-44C2-AE2D-C3A86C4D33E0} = {1B90147F-E461-43AC-BB7D-6E3072EC2D69}
 		{F8F3AAE6-A278-4936-94A4-6238D7689C94} = {A511F0DC-A9C6-44C2-AE2D-C3A86C4D33E0}
+		{052EBDCE-8487-4FB4-BD4E-20962F8F5AEC} = {1B90147F-E461-43AC-BB7D-6E3072EC2D69}
+		{CAFA557D-A893-4E30-AED1-816A7A32FBC4} = {052EBDCE-8487-4FB4-BD4E-20962F8F5AEC}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5520301A-84D3-420F-BD0C-F39A93F65D67}

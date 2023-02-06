@@ -1,0 +1,30 @@
+{
+  "Routes": [
+    {
+      "UpstreamPathTemplate": "/Notes",
+      "UpstreamHttpMethod": [ "GET", "Post", "Put" ],
+      "DownstreamPathTemplate": "/api/Notes",
+      "DownstreamScheme": "http",
+      "SwaggerKey": "notes",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5007
+        }
+      ]
+    },
+    {
+      "UpstreamPathTemplate": "/Notes/{id}",
+      "UpstreamHttpMethod": [ "Get", "Delete" ],
+      "DownstreamPathTemplate": "/api/Notes/{id}",
+      "DownstreamScheme": "http",
+      "SwaggerKey": "notes",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5007
+        }
+      ]
+    }
+  ] 
+}

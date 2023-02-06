@@ -1,5 +1,4 @@
-﻿using Dokan.Service.Ordering.DTOs;
-using Dokan.Service.Ordering.Models;
+﻿using Dokan.Service.Ordering.Models;
 using MassTransit;
 using Microsoft.AspNetCore.Mvc;
 using MongoDB.Driver;
@@ -11,18 +10,13 @@ namespace Dokan.Service.Ordering.Controllers
     public class OrderController : ControllerBase
     {
         private readonly IPublishEndpoint _publishEndpoint;
-        private readonly IMongoCollection<Models.Order> _orderCollection;
+        private readonly IMongoCollection<Order> _orderCollection;
         public OrderController(IPublishEndpoint publishEndpoint)
         {
-            _publishEndpoint = publishEndpoint;
-            var dbHost = "";
-            var dbName = "";
-            var cs = "mongodb+srv://mohsinafridi91:Prompt7788@prompt-cluster.ho9semy.mongodb.net/?retryWrites=true&w=majority";
-
-            var mongoUrl = MongoUrl.Create(cs);
-            var mongoClient = new MongoClient(mongoUrl);
-            var database = mongoClient.GetDatabase("PromptDb");
-            _orderCollection = database.GetCollection<Models.Order>("order");
+            _publishEndpoint = publishEndpoint;    
+            var mongoClient = new MongoClient();
+            var database = mongoClient.GetDatabase("dokan");
+            _orderCollection = database.GetCollection<Order>("orders");
         }
 
         //[HttpGet]
