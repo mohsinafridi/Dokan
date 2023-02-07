@@ -11,7 +11,16 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy(
+        name: "AllowOrigin",
+        builder => {
+            builder.AllowAnyOrigin()
+                    .AllowAnyMethod()
+                    .AllowAnyHeader();
+        });
+});
 
 builder.Services.AddTransient<IBookService, BookService>();
 var myAppSettings = builder.Configuration.Get<DatabaseSettings>();
@@ -26,6 +35,7 @@ builder.Services.AddSingleton<IDatabaseSettings>(x => x.GetRequiredService<IOpti
 builder.Services.AddCustomJwtAuthentication();
 
 var app = builder.Build();
+app.UseCors("AllowOrigin");
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

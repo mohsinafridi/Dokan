@@ -20,10 +20,13 @@ builder.Services.AddControllers();
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("CorsPolicy",
-    builder => builder.WithOrigins("http://localhost:4200")
+    builder => builder
+    //.WithOrigins("*")
     .AllowAnyMethod()
     .AllowAnyHeader()
-    .AllowCredentials());
+    .AllowCredentials()
+    .AllowAnyOrigin()
+    );
 });
 
 
@@ -41,7 +44,9 @@ builder.Configuration.SetBasePath(Directory.GetCurrentDirectory())
 // 1. JWT Extension method
 builder.Services.AddCustomJwtAuthentication();
 var app = builder.Build();
+
 app.UseCors("CorsPolicy");
+
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
@@ -49,7 +54,6 @@ if (app.Environment.IsDevelopment())
    // app.UseSwaggerUI();
 }
 
-//app.UseOcelot();
 app.UseSwaggerForOcelotUI(opt =>
 {
     opt.PathToSwaggerGenerator = "/swagger/docs";
