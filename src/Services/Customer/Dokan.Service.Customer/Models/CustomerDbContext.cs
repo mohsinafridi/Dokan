@@ -9,7 +9,7 @@ namespace Dokan.Service.Customer.Models
     public class CustomerDbContext : DbContext
     {
          protected readonly IConfiguration Configuration;
-        private readonly string connectionString = "Server=MOHSIN\\SQLEXPRESS;Database=CustomerDb;User ID=sa;Password=";
+        private readonly string connectionString = "Server=AEADLT19726;Database=CustomerDb;User ID=sa;Password=Maqta@7788";
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -19,7 +19,7 @@ namespace Dokan.Service.Customer.Models
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
-//            builder.Entity<Customer>().HasQueryFilter(x => x);
+            //  builder.Entity<Customer>().HasQueryFilter(x => x);
         }
         public CustomerDbContext(IConfiguration configuration, DbContextOptions<CustomerDbContext> dbContextOptions) : base()
         {

@@ -9,23 +9,22 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 
 builder.Services.AddControllers();
-//DI
 
-// builder.Services.Configure<DatabaseSettings>(builder.Configuration.GetSection(nameof(DatabaseSettings)));
 builder.Services.Configure<DatabaseSettings>(builder.Configuration.GetSection("DatabaseSettings"));
 
 
-//builder.Services.AddSingleton<IDatabaseSettings>(x => x.GetRequiredService<IOptions<DatabaseSettings>>().Value);
+// builder.Services.AddSingleton<IDatabaseSettings>(x => x.GetRequiredService<IOptions<DatabaseSettings>>().Value);
 
 
-var cs = builder.Configuration.GetConnectionString("DefaultConnection");
-//builder.Services.AddDbContext<CustomerDbContext>(options => options.UseSqlServer(cs));
+var cs = "Server=AEADLT19726;Database=CustomerDb;User ID=sa;Password=xxx";
+ 
+builder.Services.AddDbContext<CustomerDbContext>(options => options.UseSqlServer(cs));
 
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
 
-//app.UseAuthorization();
+// app.UseAuthorization();
 
 app.MapControllers();
 
