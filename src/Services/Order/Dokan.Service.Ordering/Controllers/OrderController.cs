@@ -42,7 +42,7 @@ namespace Dokan.Service.Ordering.Controllers
         [HttpPost]
         public async Task<IActionResult> CreateOrder(Order order)
         {
-            // Rabbir MQ Logic
+            // Rabbit MQ Logic
             //await _publishEndpoint.Publish<OrderCreated>(new
             //{
             //    Id = 1,
