@@ -1,7 +1,7 @@
 version: '3.4'
 
 services:
-  dokan.service.customer:
+  dokan.service.notes:
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
     ports:

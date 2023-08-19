@@ -1,28 +1,8 @@
 version: '3.4'
 
-networks:
-   backend:
-
 services:
-  customerdb:
-     container_name: customer-db
-     image: mcr.microsoft.com/mssql/server:2019-latest
-     environment:
-      - ACCEPT_EULA=Y
-     networks:
-       - backend
-     ports:
-       - 8001:1433   
-  dokan.service.customer:
-    container_name: customer-api
-    image: ${DOCKER_REGISTRY-}dokanservicecustomer
+  dokan.service.notes:
+    image: ${DOCKER_REGISTRY-}dokanservicenotes
     build:
       context: .
-      dockerfile: src/Services/Customer/Dokan.Service.Customer/Dockerfile
-    networks:
-       - backend
-    ports:
-       - 8002:80
-    environment:
-      - DB_HOST =customerdb
-      - DB_NAME=customer
+      dockerfile: src/Services/Notes/Dokan.Service.Notes/Dockerfile

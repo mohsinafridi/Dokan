@@ -15,13 +15,6 @@
          -- sql server support.
          -- Mass transit
          -- Docker
-        
-
-
-
-
-
-
 
 
          Microservices:
