@@ -1,58 +1,74 @@
-using Dokan.Service.Notes.Models;
-using Dokan.Service.Notes.Service;
+﻿using Dokan.Service.Notes.Services;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Dokan.Service.Notes.Controllers
 {
-    [ApiController]
     [Route("api/[controller]")]
+    [ApiController]
     public class NotesController : ControllerBase
     {
-        private readonly INoteService _service;
-
-        public NotesController(INoteService service)
+        private readonly NotesService _notesService;
+        public NotesController(NotesService notesService)
         {
-            _service = service;
+            _notesService = notesService;
         }
 
         [HttpGet]
-        public async Task<IActionResult> Get()
+        public async Task<List<Models.Notes>> Get() => await _notesService.GetAsync();
+
+        [HttpGet("{id:length(24)}")]
+        public async Task<ActionResult<Models.Notes>> Get(string id)
         {
-            var result = await _service.GetNoteList();
+            var note = await _notesService.GetAsync(id);
 
-            return Ok(result);
-        }
+            if (note is null)
+            {
+                return NotFound();
+            }
 
-        [HttpGet("{id}")]
-        public async Task<IActionResult> GetNote(int id)
-        {
-            var result = await _service.GetNote(id);
-
-            return Ok(result);
+            return note;
         }
 
         [HttpPost]
-        public async Task<IActionResult> AddEmployee([FromBody] Note note)
+        public async Task<IActionResult> Post(Models.Notes newNote)
         {
-            var result = await _service.CreateNote(note);
+            await _notesService.CreateAsync(newNote);
 
-            return Ok(result);
+            return CreatedAtAction(nameof(Get), new { id = newNote.Id }, newNote);
         }
 
-        [HttpPut]
-        public async Task<IActionResult> UpdateEmployee([FromBody] Note note)
+        [HttpPut("{id:length(24)}")]
+        public async Task<IActionResult> Update(string id, Models.Notes updatedBook)
         {
-            var result = await _service.UpdateNote(note);
+            var note = await _notesService.GetAsync(id);
 
-            return Ok(result);
+            if (note is null)
+            {
+                return NotFound();
+            }
+
+            updatedBook.Id = note.Id;
+
+            await _notesService.UpdateAsync(id, updatedBook);
+
+            return NoContent();
         }
 
-        [HttpDelete("{id:int}")]
-        public async Task<IActionResult> DeleteNote(int id)
+        [HttpDelete("{id:length(24)}")]
+        public async Task<IActionResult> Delete(string id)
         {
-            var result = await _service.DeleteNote(id);
+            var book = await _notesService.GetAsync(id);
 
-            return Ok(result);
+            if (book is null)
+            {
+                return NotFound();
+            }
+
+            await _notesService.RemoveAsync(id);
+
+            return NoContent();
         }
+
     }
 }

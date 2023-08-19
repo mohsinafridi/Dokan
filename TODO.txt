@@ -4,30 +4,32 @@
          Ocelot is added.
          RabbitMq and Mass Transit is also added.
          pushed to Github.
-         Mongo Db added for Book service.
-         SQL Server Added for Customer Service.
-         PostgreSql Added for Notes Service.
-         Added swagger on gateway side for all apis.
-         -- Angular (Added)
+         Mongo Db added for Book/Notes service.
+         Angular
 
- -- New addition         
+
+ -- New Addition
+         -- and Sql server for different micro services.
          -- add Graph QL for data fetching.
-         
-         -- sql server support. (done)
-         -- Mass transit 
-         -- Docker (Deploy all Services on docker)
-         
-         -- Key Authentication (New)
-         -- Write Unit Tests.
+         -- add swagger on gateway side for all apis.
+         -- sql server support.
+         -- Mass transit
+         -- Docker
+        
+
+
+
+
+
 
 
 
          Microservices:
-         1. https://localhost:5001/Order - Mongo Db
+         1. https://localhost:5001/Order - Order - Mongo Db
          2. https://localhost:5004/Book - Mongo Db -- done.
          3. https://localhost:5005/Customer - Sql Server Db
          4. https://localhost:5006/Product - MySql Db
-         5. https://localhost:5007/Note  Notes - PostgreSQL
+         5. https://localhost:5007/Note  Notes - Sql Server  Removed - PostgreSQL
          6. 
 
         Front end:
