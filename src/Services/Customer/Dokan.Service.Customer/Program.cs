@@ -1,8 +1,8 @@
-using Dokan.Service.Customer.Interfaces;
+
 using Dokan.Service.Customer.Models;
 using Dokan.Service.Customer.Services;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Options;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,13 +10,14 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
 
+
+builder.Services.AddDbContext<CustomerDbContext>(options => 
+options.UseSqlServer(builder.Configuration.GetConnectionString(nameof(DatabaseSettings))));
+
 builder.Services.Configure<DatabaseSettings>(builder.Configuration.GetSection("DatabaseSettings"));
 
 
-// builder.Services.AddSingleton<IDatabaseSettings>(x => x.GetRequiredService<IOptions<DatabaseSettings>>().Value);
-
-
-var cs = "Server=AEADLT19726;Database=CustomerDb;User ID=sa;Password=xxx";
+var cs = "Server=MOHSIN\\SQLEXPRESS;Database=CustomerDb;User ID=sa;Password=Prompt@7788";
  
 builder.Services.AddDbContext<CustomerDbContext>(options => options.UseSqlServer(cs));
 

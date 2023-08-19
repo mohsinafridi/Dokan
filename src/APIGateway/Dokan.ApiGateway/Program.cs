@@ -21,11 +21,11 @@ builder.Services.AddCors(options =>
 {
     options.AddPolicy("CorsPolicy",
     builder => builder
-    //.WithOrigins("*")
+    .WithOrigins("http://localhost:4200")
     .AllowAnyMethod()
     .AllowAnyHeader()
     .AllowCredentials()
-    .AllowAnyOrigin()
+    
     );
 });
 
@@ -37,7 +37,9 @@ builder.Services.AddSwaggerForOcelot(builder.Configuration);
 
 
 var environment = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT");
-builder.Configuration.SetBasePath(Directory.GetCurrentDirectory())
+builder
+    .Configuration
+    .SetBasePath(Directory.GetCurrentDirectory())
     .AddOcelot(routes, builder.Environment)
     .AddEnvironmentVariables();
 

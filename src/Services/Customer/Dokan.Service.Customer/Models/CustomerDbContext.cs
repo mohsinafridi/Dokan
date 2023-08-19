@@ -9,7 +9,7 @@ namespace Dokan.Service.Customer.Models
     public class CustomerDbContext : DbContext
     {
          protected readonly IConfiguration Configuration;
-        private readonly string connectionString = "Server=AEADLT19726;Database=CustomerDb;User ID=sa;Password=Maqta@7788";
+        private readonly string connectionString = "Server=MOHSIN\\SQLEXPRESS;Database=CustomerDb;User ID=sa;Password=Prompt@7788";
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

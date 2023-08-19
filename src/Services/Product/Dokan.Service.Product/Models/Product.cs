@@ -11,7 +11,6 @@ namespace Dokan.Service.Product.Models
         [Column("product_id")]
         public int ProductId { get; set; }
 
-
         [Column("product_name")]
         public string? ProductName { get; set; }
 

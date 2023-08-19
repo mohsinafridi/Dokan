@@ -20,7 +20,7 @@ namespace Dokan.Service.Customer.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Models.Customer>>> Get()
         {
-            var customers = await _context.Customers.ToListAsync();
+            var customers = await _context.Customers.AsNoTracking().ToListAsync();
             if (customers.Count == 0)
                 return NotFound();
 

@@ -14,15 +14,13 @@ namespace Dokan.Service.Notes.Service
         public async Task<bool> CreateNote(Note note)
         {
             var result =
-                await _dbService.EditData(
-                    "INSERT INTO public.note (Id,Content, CreatedAt) VALUES (@Id, @Content, @CreatedAt)",
-                    note);
+                await _dbService.EditData("INSERT INTO public.note (Id,Content, CreatedAt) VALUES (@Id, @Content, @CreatedAt)",note);
             return true;
         }
 
         public async Task<List<Note>> GetNoteList()
         {
-            var noteList = await _dbService.GetAll<Note>("SELECT * FROM public.note", new { });
+            var noteList = await _dbService.GetAll<Note>("SELECT * FROM public.note order by id asc", new { });
             return noteList;
         }
 
@@ -36,8 +34,7 @@ namespace Dokan.Service.Notes.Service
         public async Task<Note> UpdateNote(Note note)
         {
             var updateNote =
-                await _dbService.EditData(
-                    "Update public.note SET Content=@Content, CreatedAt=@CreatedAt WHERE id=@Id",
+                await _dbService.EditData("Update public.note SET Content=@Content, CreatedAt=@CreatedAt WHERE id=@Id",
                     note);
             return note;
         }
