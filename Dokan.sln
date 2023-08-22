@@ -48,7 +48,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dokan.Service.Product", "sr
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Notes", "Notes", "{052EBDCE-8487-4FB4-BD4E-20962F8F5AEC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dokan.Service.Notes", "src\Services\Notes\Dokan.Service.Notes\Dokan.Service.Notes.csproj", "{155E2DFD-05FC-49BC-A211-883E566BD8F2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dokan.Service.Notes", "src\Services\Notes\Dokan.Service.Notes\Dokan.Service.Notes.csproj", "{155E2DFD-05FC-49BC-A211-883E566BD8F2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

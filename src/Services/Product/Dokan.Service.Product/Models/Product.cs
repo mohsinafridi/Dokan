@@ -7,17 +7,15 @@ namespace Dokan.Service.Product.Models
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        [Required]
-        [Column("product_id")]
+        [Required]        
         public int ProductId { get; set; }
 
-        [Column("product_name")]
         public string? ProductName { get; set; }
-
-        [Column("product_code")]
+        
         public string? ProductCode{ get; set; }
-
-        [Column("price")]
+        public string? ProductDescription { get; set; }       
         public double Price { get; set; }
+        public int ProductStock { get; set; }
+
     }
 }

@@ -1,4 +1,5 @@
 ﻿using Dokan.Service.Product.Models;
+using Dokan.Service.Product.Services;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Dokan.Service.Product.Controllers
@@ -7,52 +8,50 @@ namespace Dokan.Service.Product.Controllers
     [ApiController]
     public class ProductController : ControllerBase
     {
-        private readonly ProductDbContext _context;
+        private readonly IProductService _productService;
 
-        public ProductController(ProductDbContext context)
+        public ProductController(IProductService productService)
         {
-            _context = context;
+            _productService = productService;
         }
         [HttpGet]
 
 
         [HttpGet]
-        public ActionResult<IEnumerable<Models.Product>> Get()
+        public async Task<ActionResult<IEnumerable<Models.Product>>> Get()
         {
-            return _context.Products;
+            var products =  await _productService.GetProducts();
+            return new OkObjectResult(products);
         }
 
         [HttpGet("{Id}")]
         public async Task<ActionResult<Models.Product>> Get(int Id)
         {
-            var product = await _context.Products.FindAsync(Id);
-            return product;
+            var product = await _productService.GetProductById(Id);
+            return new OkObjectResult(product);
         }
 
         [HttpPost]
         public async Task<ActionResult> CreateProduct(Models.Product product)
         {
-            await _context.Products.AddAsync(product);
-            await _context.SaveChangesAsync();
-            return Ok();
+            Models.Product productObj =  await _productService.AddProduct(product);            
+            return Ok(productObj);
         }
 
         [HttpPut]
         public async Task<ActionResult> UpdateProduct(Models.Product product)
         {
-            _context.Products.Update(product);
-            await _context.SaveChangesAsync();
-            return Ok();
+           var updatedProduct = await _productService.UpdateProduct(product);            
+            return Ok(updatedProduct);
         }
 
         [HttpDelete("{Id}")]
-        public async Task<ActionResult> DeleteProduct(int Id)
+        public ActionResult DeleteProduct(int Id)
         {
-            var product = await _context.Products.FindAsync(Id);
-            if (product != null)
+            var product =  _productService.DeleteProduct(Id);
+            if (product)
             {
-                _context.Products.Remove(product);
-                await _context.SaveChangesAsync();
+                return Ok();
             }
             return Ok();
         }

@@ -8,13 +8,17 @@
          Angular
 
 
- -- New Addition
-         -- and Sql server for different micro services.
-         -- add Graph QL for data fetching.
-         -- add swagger on gateway side for all apis.
-         -- sql server support.
-         -- Mass transit
-         -- Docker
+ -- TODO::
+         - and Sql server for different micro services.
+         - add Graph QL for data fetching.
+         - add swagger on gateway side for all apis.
+         - sql server support.
+         - Mass transit
+         - Docker
+         - Cache
+         - API Versioning
+
+         
 
 
          Microservices:

@@ -3,7 +3,7 @@
   <PropertyGroup Label="Globals">
     <ProjectVersion>2.1</ProjectVersion>
     <DockerTargetOS>Linux</DockerTargetOS>
-    <ProjectGuid>af43736b-4f49-45d7-8155-b523a3a3f059</ProjectGuid>
+    <ProjectGuid>e8ac660d-8112-4766-a066-3b572148f1a7</ProjectGuid>
     <DockerLaunchAction>LaunchBrowser</DockerLaunchAction>
     <DockerServiceUrl>{Scheme}://localhost:{ServicePort}</DockerServiceUrl>
     <DockerServiceName>dokan.service.notes</DockerServiceName>

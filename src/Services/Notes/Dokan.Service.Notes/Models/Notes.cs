@@ -12,7 +12,7 @@ namespace Dokan.Service.Notes.Models
         public string? Id { get; set; }
         [JsonPropertyName("content")]
         public string Content { get; set; } = string.Empty;
-        [JsonPropertyName("createadat")]
+        [JsonPropertyName("createadate")]
         public DateTime CreateadAt { get; set; }
         [JsonPropertyName("isdeleted")]
         public bool IsDeleted { get; set; }
