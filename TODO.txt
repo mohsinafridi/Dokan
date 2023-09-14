@@ -6,33 +6,35 @@
          pushed to Github.
          Mongo Db added for Book/Notes service.
          Angular
-
+         API Versioning Added for Products - V1 and V2.
 
  -- TODO::
-         - and Sql server for different micro services.
-         - add Graph QL for data fetching.
-         - add swagger on gateway side for all apis.
+        
+         - Add Graph QL for data fetching.
+         - Add swagger on gateway side for all apis.
          - sql server support.
          - Mass transit
          - Docker
          - Cache
-         - API Versioning
+        - Swagger Versioning for all apis
+        - Add Minimal Api
+        - Caching :: Output/Response Caching
+        - Docker Compose
 
-         
+         API Gateway Url: 
+            https://localhost:5000/{serviceName}
 
 
          Microservices:
          1. https://localhost:5001/Order - Order - Mongo Db
          2. https://localhost:5004/Book - Mongo Db -- done.
          3. https://localhost:5005/Customer - Sql Server Db
-         4. https://localhost:5006/Product - MySql Db
+         4. https://localhost:5006/Product - Sql Server Db
          5. https://localhost:5007/Note  Notes - Sql Server  Removed - PostgreSQL
          6. 
 
-        Front end:
 
-        Angular application:
-        
+        Angular Application:        
         1. Add Authentication from API Gateway.
         2. Use JWT for Authorization.
         3. Use Reactive forms.  (done)

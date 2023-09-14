@@ -14,8 +14,8 @@ namespace Dokan.Service.Product.Models
         
         public string? ProductCode{ get; set; }
         public string? ProductDescription { get; set; }       
-        public double Price { get; set; }
-        public int ProductStock { get; set; }
+        public double? Price { get; set; }
+        public int? ProductStock { get; set; }
 
     }
 }

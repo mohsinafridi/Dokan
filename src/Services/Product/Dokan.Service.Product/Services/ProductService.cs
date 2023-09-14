@@ -18,8 +18,7 @@ namespace Dokan.Service.Product.Services
             return product;
         }
 
-       
-
+        // V-1 Version.
         public async Task<Models.Product> GetProductById(int id)
         {
             var product = await _dbContext
@@ -29,10 +28,33 @@ namespace Dokan.Service.Product.Services
 
             return product == null ? new Models.Product() : product;
         }
+        // V-2 Version.
+        public async Task<Models.Product> GetProductByIdV2(int id)
+        {
+            var product = await _dbContext
+                .Products
+                .Where(x => x.ProductId == id)
+                .FirstOrDefaultAsync();
+
+            return new Models.Product
+            {
+                ProductCode = product?.ProductCode,
+                ProductName = product?.ProductName,
+                ProductDescription = "Version 2",
+                Price = product?.Price,                
+                ProductStock = product?.ProductStock
+            };
+        }
+
+        
 
         public async Task<IEnumerable<Models.Product>> GetProducts()
         {
             return await _dbContext.Products.ToListAsync();           
+        }
+        public async Task<IEnumerable<Models.Product>> GetProductsV1()
+        {
+            return await _dbContext.Products.ToListAsync();
         }
 
         public async Task<Models.Product> UpdateProduct(Models.Product product)

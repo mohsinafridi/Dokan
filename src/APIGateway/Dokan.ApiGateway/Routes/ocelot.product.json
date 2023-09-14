@@ -1,9 +1,9 @@
 {
   "Routes": [
     {
-      "UpstreamPathTemplate": "/Product",
+      "UpstreamPathTemplate": "/v{version}/Product",
       "UpstreamHttpMethod": [ "GET", "Post", "Put" ],
-      "DownstreamPathTemplate": "/api/Product",
+      "DownstreamPathTemplate": "/api/v{version}/Product",
       "DownstreamScheme": "http",
       "SwaggerKey": "product",
       "DownstreamHostAndPorts": [
@@ -28,9 +28,9 @@
       //}
     },
     {
-      "UpstreamPathTemplate": "/Product/{id}",
+      "UpstreamPathTemplate": "/v{version}/Product/{id}",
       "UpstreamHttpMethod": [ "Get", "Delete" ],
-      "DownstreamPathTemplate": "/api/Product/{id}",
+      "DownstreamPathTemplate": "/api/v{version}/Product/{id}",
       "DownstreamScheme": "http",
       "SwaggerKey": "product",
       "DownstreamHostAndPorts": [
