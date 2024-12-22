@@ -1,8 +1,5 @@
 version: '3.4'
 
 services:
-  dokan.service.notes:
-    image: ${DOCKER_REGISTRY-}dokanservicenotes
-    build:
-      context: .
-      dockerfile: src/Services/Notes/Dokan.Service.Notes/Dockerfile
+  catalogdb:
+    image: postgres
