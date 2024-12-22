@@ -1,4 +1,45 @@
 
+ .Architectures
+           Layered Architecture          
+           Vertical 
+           DDD
+           Clean Architecture
+
+.Pattern & Principles
+            Solid,DI
+            CQRS
+            Meidator,Proxy,Decorator Options
+            Pub/Sub , Caching
+            API Gateway
+
+.Database
+           Transactional Document DB
+           Postgres
+           Redis
+           SQLite
+           SQL SERVER
+           Mongo
+.Libraries
+          Carter
+          Martin
+          Mediator
+          Mapster
+          Mass Transit
+          Fluent Validation
+          EF Core , Refit
+
+.Communication
+          Rabbit MQ
+          Signal R
+          gRPC
+          GraphQL
+
+.API Gateway And Client
+         Ocelot
+          Angular
+          React
+          Blazor
+          Vue
 
 -- Done
          Ocelot is added.
@@ -25,13 +66,13 @@
             https://localhost:5000/{serviceName}
 
 
-         Microservices:
-         1. https://localhost:5001/Order - Order - Mongo Db
+         Ployglot Microservices:
+         1. https://localhost:5001/Order - Order - Mongo Db - We will use Clean
          2. https://localhost:5004/Book - Mongo Db -- done.
          3. https://localhost:5005/Customer - Sql Server Db
          4. https://localhost:5006/Product - Sql Server Db
          5. https://localhost:5007/Note  Notes - Sql Server  Removed - PostgreSQL
-         6. 
+         6. https://localhost:5008/Catalog  - we will use Vertical Slide.  (Postgres) using marten library.
 
 
         Angular Application:        
