@@ -4,3 +4,5 @@ global using Mapster;
 global using MediatR;
 global using BuildingBlocks.CQRS;
 global using Dokan.Service.Catalog.Models;
+global using Dokan.Service.Catalog.Exceptions;
+global using FluentValidation;

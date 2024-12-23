@@ -94,3 +94,26 @@
                 await endPoint.Send(ticket);
                 return Ok();
             }
+
+
+            // Connect Postgres and PG Admin as a Docker Container 
+            // https://medium.com/@marvinjungre/get-postgresql-and-pgadmin-4-up-and-running-with-docker-4a8d81048aea
+
+            1. Pg Admin:
+            docker run -p 80:80 -e 'PGADMIN_DEFAULT_EMAIL=user@domain.com' -e 'PGADMIN_DEFAULT_PASSWORD=SuperSecret' -d dpage/pgadmin4
+            
+
+
+
+            2. Run Postgres Image as continer:
+             docker run -d --name mypostgres -p 5432:5432 -e POSTGRES_PASSWORD=admin postgres
+             
+
+
+            3.  Get IP Address for connecting postgres server.
+            docker inspect -f '{{range.NetworkSettings.Networks}}{{.IPAddress}}{{end}}' mypostgres
+             
+             172.17.0.3
+
+            4. Create server and add IP Address,Username and Password.
+                
