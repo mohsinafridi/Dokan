@@ -1,0 +1,9 @@
+﻿global using BuildingBlocks.CQRS;
+global using Dokan.Service.Basket.Models;
+global using Carter;
+global using MediatR;
+global using Mapster;
+global using Dokan.Service.Basket.Data;
+global using FluentValidation;
+global using BuildingBlocks.Behaviors;
+global using BuildingBlocks.Exceptions;

@@ -12,20 +12,20 @@ EXPOSE 8081
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
-COPY ["src/Services/Catalog/Dokan.Service.Catalog/Dokan.Service.Catalog.csproj", "src/Services/Catalog/Dokan.Service.Catalog/"]
+COPY ["src/Services/Basket/Dokan.Service.Basket/Dokan.Service.Basket.csproj", "src/Services/Basket/Dokan.Service.Basket/"]
 COPY ["src/BuildingBlocks/BuildingBlocks/BuildingBlocks.csproj", "src/BuildingBlocks/BuildingBlocks/"]
-RUN dotnet restore "./src/Services/Catalog/Dokan.Service.Catalog/Dokan.Service.Catalog.csproj"
+RUN dotnet restore "./src/Services/Basket/Dokan.Service.Basket/Dokan.Service.Basket.csproj"
 COPY . .
-WORKDIR "/src/src/Services/Catalog/Dokan.Service.Catalog"
-RUN dotnet build "./Dokan.Service.Catalog.csproj" -c $BUILD_CONFIGURATION -o /app/build
+WORKDIR "/src/src/Services/Basket/Dokan.Service.Basket"
+RUN dotnet build "./Dokan.Service.Basket.csproj" -c $BUILD_CONFIGURATION -o /app/build
 
 # This stage is used to publish the service project to be copied to the final stage
 FROM build AS publish
 ARG BUILD_CONFIGURATION=Release
-RUN dotnet publish "./Dokan.Service.Catalog.csproj" -c $BUILD_CONFIGURATION -o /app/publish /p:UseAppHost=false
+RUN dotnet publish "./Dokan.Service.Basket.csproj" -c $BUILD_CONFIGURATION -o /app/publish /p:UseAppHost=false
 
 # This stage is used in production or when running from VS in regular mode (Default when not using the Debug configuration)
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
-ENTRYPOINT ["dotnet", "Dokan.Service.Catalog.dll"]
+ENTRYPOINT ["dotnet", "Dokan.Service.Basket.dll"]
