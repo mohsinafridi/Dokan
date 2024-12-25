@@ -73,8 +73,7 @@ services:
       - ASPNETCORE_HTTP_PORTS=8080
       - ASPNETCORE_HTTPS_PORTS=8081
       - ConnectionStrings__Database=Server=catalogdb;Port=5432;Database=BasketDb;Username=postgres;Password=postgres
-      - ConnectionStrings__Redis=distributedcache:6379
-      #- GrpcSettings__DiscountUrl=https://Dokan.Service.Discount:8081
+      - ConnectionStrings__Redis=distributedcache:6379      
       - GrpcSettings__DiscountUrl=https://Dokan.Service.Discount:8081
     depends_on:
       - basketdb

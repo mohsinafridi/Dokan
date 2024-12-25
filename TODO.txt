@@ -69,10 +69,23 @@
          Ployglot Microservices:
          1. https://localhost:5001/Order - Order - Mongo Db - We will use Clean
          2. https://localhost:5004/Book - Mongo Db -- done.
-         3. https://localhost:5005/Basket - - we will use Vertical Slide.  (Postgres) using marten library + Redis
+         
          4. https://localhost:5006/Product - Sql Server Db
          5. https://localhost:5007/Note  Notes - Sql Server  Removed - PostgreSQL
-         6. https://localhost:5008/Catalog  
+                  
+
+
+          ## Environment
+          Service Name                      Dev                                 Docker         
+          Catalog          https://localhost:5008                                   http://localhost:6000
+          Basket           https://localhost:5005              http://localhost:7000
+          Discount         https://localhost:6062              https://localhost:6062
+
+          1. Catalog Uses Vertical Slide + Postgres using marten library
+          2. Basket Uses  Vertical Slide + Postgres using marten library + Redis.
+          3. Discount Uses gRPCS + SQLite Database.
+
+
 
 
         Angular Application:        
