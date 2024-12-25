@@ -60,6 +60,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Basket", "Basket", "{6D86F1
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dokan.Service.Basket", "src\Services\Basket\Dokan.Service.Basket\Dokan.Service.Basket.csproj", "{A1B5658D-54D3-477E-B039-5A7B2DB944F0}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Discount", "Discount", "{1C11697C-C657-4AA9-A677-1E5BE9440B69}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dokan.Service.Discount", "src\Services\Discount\Dokan.Service.Discount\Dokan.Service.Discount.csproj", "{B7C3B210-863D-40A7-97C1-3402FA7CB102}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -118,6 +122,10 @@ Global
 		{A1B5658D-54D3-477E-B039-5A7B2DB944F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A1B5658D-54D3-477E-B039-5A7B2DB944F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A1B5658D-54D3-477E-B039-5A7B2DB944F0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B7C3B210-863D-40A7-97C1-3402FA7CB102}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B7C3B210-863D-40A7-97C1-3402FA7CB102}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B7C3B210-863D-40A7-97C1-3402FA7CB102}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B7C3B210-863D-40A7-97C1-3402FA7CB102}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -145,6 +153,8 @@ Global
 		{66522093-A47A-4F53-9C46-27970C508541} = {713B5F2F-814D-4D23-AB64-FF8D57CF38F3}
 		{6D86F1A9-498B-42EA-8873-74A8B9D8FED8} = {1B90147F-E461-43AC-BB7D-6E3072EC2D69}
 		{A1B5658D-54D3-477E-B039-5A7B2DB944F0} = {6D86F1A9-498B-42EA-8873-74A8B9D8FED8}
+		{1C11697C-C657-4AA9-A677-1E5BE9440B69} = {1B90147F-E461-43AC-BB7D-6E3072EC2D69}
+		{B7C3B210-863D-40A7-97C1-3402FA7CB102} = {1C11697C-C657-4AA9-A677-1E5BE9440B69}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5520301A-84D3-420F-BD0C-F39A93F65D67}

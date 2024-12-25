@@ -4,9 +4,9 @@
       "commandName": "DockerCompose",
       "commandVersion": "1.0",
       "serviceActions": {
-        "dokan.service.notes": "StartDebugging",
         "dokan.service.catalog": "StartDebugging",
-        "dokan.service.basket": "StartDebugging"
+        "dokan.service.basket": "StartDebugging",
+        "dokan.service.discount": "StartDebugging"
       }
     }
   }

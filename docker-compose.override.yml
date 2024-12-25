@@ -24,6 +24,11 @@ services:
   #       - "5433:5432"
   #   volumes:
   #     - ./postgres_basket:/var/lib/postgresql/data/
+  distributedcache:
+   container_name: distributedcache
+   restart: always
+   ports:
+   - "6379:6379"
 
   pgadmin:
     image: dpage/pgadmin4
@@ -36,6 +41,16 @@ services:
     depends_on:
       - catalogdb  # Ensures pgAdmin starts after PostgreSQL
       - basketdb
+       
+  # sqlite:
+  #   container_name: sqlite
+  #   image: sqlite:latest
+  #   restart: always
+  #   command: sqlite3 discount.db
+  #   ports:
+  #     - "8080:8080"
+  #   volumes:
+  #     - ./sqlite:/var/lib/sqlite/data
 
   dokan.service.catalog:
     environment:
@@ -58,11 +73,29 @@ services:
       - ASPNETCORE_HTTP_PORTS=8080
       - ASPNETCORE_HTTPS_PORTS=8081
       - ConnectionStrings__Database=Server=catalogdb;Port=5432;Database=BasketDb;Username=postgres;Password=postgres
+      - ConnectionStrings__Redis=distributedcache:6379
+      #- GrpcSettings__DiscountUrl=https://Dokan.Service.Discount:8081
+      - GrpcSettings__DiscountUrl=https://Dokan.Service.Discount:8081
     depends_on:
       - basketdb
+      - distributedcache
+      - dokan.service.discount
     ports:
       - "7000:8080"
       - "7070:8081"
+    volumes:
+      - ${APPDATA}/Microsoft/UserSecrets:/home/app/.microsoft/usersecrets:ro
+      - ${APPDATA}/ASP.NET/Https:/home/app/.aspnet/https:ro
+
+  dokan.service.discount:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_HTTP_PORTS=8080
+      - ASPNETCORE_HTTPS_PORTS=8081            
+      - ConnectionStrings__Database=Data Source=discountdb 
+    ports:
+      - "6002:8080"
+      - "6062:8081"
     volumes:
       - ${APPDATA}/Microsoft/UserSecrets:/home/app/.microsoft/usersecrets:ro
       - ${APPDATA}/ASP.NET/Https:/home/app/.aspnet/https:ro
