@@ -76,16 +76,40 @@
 
 
           ## Environment
-          Service Name                      Dev                                 Docker         
-          Catalog          https://localhost:5008                                   http://localhost:6000
-          Basket           https://localhost:5005              http://localhost:7000
-          Discount         https://localhost:6062              https://localhost:6062
+          Service Name                      Dev                                                       Docker         
+            Catalog                    https://localhost:5008                                   http://localhost:6000
+            Basket                     https://localhost:5005                                   http://localhost:7000
+            Discount                   https://localhost:6062                                   https://localhost:6062
+            Order                      https://localhost:5001                                   https://localhost:5051 
 
           1. Catalog Uses Vertical Slide + Postgres using marten library
           2. Basket Uses  Vertical Slide + Postgres using marten library + Redis.
           3. Discount Uses gRPCS + SQLite Database.
+          4. Order Uses Clean Architecture + SQL Server.
 
 
+          gRPC Payload:
+           {
+                  "coupon": {
+                      "productName": "IPhone16",
+                      "description": "IPhone15 description",
+                      "amount": 200
+                  }
+           }
+
+
+                {
+                  "productName": "IPhone15"
+              }
+
+              // Update Discount payload
+              {
+                "coupon": {
+                "id": 6,
+                "productName": "Updated to IPhone16",
+                "description": "IPhone15 description",
+                "amount": 150
+            }
 
 
         Angular Application:        
@@ -133,3 +157,12 @@
 
             4. Create server and add IP Address,Username and Password.
                 
+
+
+                New Learning
+
+                primiteve obesseon
+
+                Anemic Domain Model Entity
+
+                ComplexProperty , ComplexTypes in .NET 8.
