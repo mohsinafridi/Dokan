@@ -12,7 +12,8 @@ services:
 
   # sqlite:
   #   image: sqlite:latest
-  
+  ordersqldb:
+    image: mcr.microsoft.com/mssql/server
 
   dokan.service.catalog:
     image: ${DOCKER_REGISTRY-}dokanservicecatalog

@@ -52,6 +52,15 @@ services:
   #   volumes:
   #     - ./sqlite:/var/lib/sqlite/data
 
+  ordersqldb:
+    container_name: orderdb
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=admin@123
+    restart: always
+    ports:
+      - "1433:1433"
+
   dokan.service.catalog:
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
