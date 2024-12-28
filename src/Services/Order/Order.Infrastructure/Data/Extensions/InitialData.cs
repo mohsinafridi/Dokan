@@ -1,7 +1,4 @@
-﻿using Order.Domain.Models;
-using Order.Domain.ValueObjects;
-
-namespace Order.Infrastructure.Data.Extensions;
+﻿namespace Order.Infrastructure.Data.Extensions;
 
 internal class InitialData
 {
