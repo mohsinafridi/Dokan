@@ -1,5 +1,5 @@
 
- .Architectures
+.Architectures
            Layered Architecture          
            Vertical 
            DDD
@@ -7,41 +7,41 @@
 
 .Pattern & Principles
             Solid,DI
-            CQRS
+            CQRS - (Command Query Responsibility Segregation)
             Meidator,Proxy,Decorator Options
             Pub/Sub , Caching
             API Gateway
 
-.Database
+.Database ::
            Transactional Document DB
            Postgres
            Redis
            SQLite
            SQL SERVER
            Mongo
-.Libraries
-          Carter
-          Martin
-          Mediator
-          Mapster
-          Mass Transit
-          Fluent Validation
-          EF Core , Refit
+.Libraries ::
+        Carter
+        Martin
+        Mediator
+        Mapster
+        Mass Transit
+        Fluent Validation
+        EF Core , Refit
 
-.Communication
-          Rabbit MQ
-          Signal R
-          gRPC
-          GraphQL
+.Communication ::
+        Rabbit MQ
+        Signal R
+        gRPC
+        GraphQL
 
-.API Gateway And Client
-         Ocelot
-          Angular
-          React
-          Blazor
-          Vue
+.API Gateway And Client::
+        Ocelot
+        Angular
+        React
+        Blazor
+        Vue
 
--- Done
+--> Done
          Ocelot is added.
          RabbitMq and Mass Transit is also added.
          pushed to Github.
@@ -49,15 +49,15 @@
          Angular
          API Versioning Added for Products - V1 and V2.
 
- -- TODO::
+ --> TODO::
         
-         - Add Graph QL for data fetching.
-         - Add swagger on gateway side for all apis.
-         - sql server support.
-         - Mass transit
-         - Docker
-         - Cache
-        - Swagger Versioning for all apis
+        - Add Graph QL for data fetching.
+        - Add swagger on gateway side for all apis.
+        - Sql Server Support.
+        - Mass Transit
+        - Docker
+        - Cache
+        - Swagger Versioning for All Apis
         - Add Minimal Api
         - Caching :: Output/Response Caching
         - Docker Compose

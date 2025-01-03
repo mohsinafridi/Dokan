@@ -1,10 +1,11 @@
 ﻿
 // using Order.Application.Data;
+using Order.Application.Data;
 using System.Reflection;
 
 namespace Order.Infrastructure.Data;
 
-public class ApplicationDbContext : DbContext //, IApplicationDbContext
+public class ApplicationDbContext : DbContext , IApplicationDbContext
 {
     
     public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
