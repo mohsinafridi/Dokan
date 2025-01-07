@@ -1,4 +1,6 @@
 
+
+
 .Architectures
            Layered Architecture          
            Vertical 
@@ -110,7 +112,7 @@
                 "description": "IPhone15 description",
                 "amount": 150
             }
-
+            // REPR Design Pattern
 
         Angular Application:        
         1. Add Authentication from API Gateway.

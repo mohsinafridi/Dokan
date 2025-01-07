@@ -5,7 +5,6 @@ using Order.Infrastructure.Data.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
 
-
 // Add Services to Container
 builder.Services
     .AddApplicationService(builder.Configuration)
@@ -14,13 +13,12 @@ builder.Services
 
 var app = builder.Build();
 
-
+// Configure Http request pipeline
 app.UseApiServices();
 
 if (app.Environment.IsDevelopment())
 {
     await app.InitialiseDatabaseAsync();
 }
-// Configure Http request pipeline
 
 app.Run();
